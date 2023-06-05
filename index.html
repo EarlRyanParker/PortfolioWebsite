@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Earl Ryan Parker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav_container">
+        <div class="nav_links">
+          <a href="#About_me">About Me</a>
+          <p class="link_divider">|</p>
+          <a href="#Embedded_software_engineering">
+            Embedded Software Engineering
+          </a>
+          <p class="link_divider">|</p>
+          <a href="#Web_Development">
+           Web Development
+          </a>
+        </div>
+        <div class="nav_buttons">
+          <button class="resume_button">Resume</button>
+          <button class="contact_me_button">Contact Me</button>
+      </nav>
+    </header>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <div class="left-container">
+        <form class="contactme-form" action="">
+          <div class="form-title"><h3>Let's Get In Touch!</h3></div>
+          <div class="form-item">
+            <input type="text" id="fromname" placeholder="Name.." />
+          </div>
+
+          <div class="form-item">
+            <input type="email" id="email" placeholder="Email.." />
+          </div>
+
+          <div class="form-item">
+            <textarea
+              id="message"
+              cols="50"
+              rows="10"
+              placeholder="Message.."
+            ></textarea>
+          </div>
+
+          <div class="form-item">
+            <button type="button" class="send_button">Send !</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="right-container"></div>
+    </div>
+
+    
+
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

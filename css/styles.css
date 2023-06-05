@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  /*font-family: "Lato", sans-serif;*/
+  font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+  margin: 0;
+  background-color: #0a0909f5;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 6.7rem;
+  color: #ffffff;
+}
+
+h2 {
+  font-family: "Merriweather", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+/*----------- Reusable CSS -----------*/
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/*----------- NAVIGATION BAR -----------*/
+.nav_container {
+  display: flex;
+  flex-direction: row;
+  margin: 5rem 5rem 2rem 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_links {
+  display: flex;
+}
+
+.nav_links a {
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: "Lato", sans-serif;
+}
+
+.link_divider {
+  margin: 0 1rem 0 1rem;
+}
+
+.nav_buttons button {
+  border-radius: 3rem;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 1.9rem;
+
+  margin-left: 1.6rem;
+}
+
+.contact_me_button {
+  background-color: #ffffff;
+  width: 18.3rem;
+  height: 5.2rem;
+}
+
+.resume_button {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  outline: #ffffff solid 0.1rem;
+  width: 18rem;
+  height: 4.8rem;
+}
+
+/*----------- About Me SECTION -----------*/
+
+/*----------- Contact Me Modal Window  -----------*/
+
+.contactme-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: white;
+  box-shadow: 0 0 1rem white;
+  z-index: 10;
+  height: 50rem;
+  display: flex;
+  justify-content: center;
+}
+.contactme-form {
+  padding: 4rem;
+}
+
+.left-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+}
+
+.right-container {
+  background: url(../images/flower.jpg) no-repeat center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.form-item {
+  margin-bottom: 1.8rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.7rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.contactme-form input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  box-sizing: border-box;
+  background-color: rgb(226, 226, 226);
+}
+
+.contactme-form input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+
+  box-sizing: border-box;
+  border: none;
+  background-color: rgb(226, 226, 226);
+}
+
+.contactme-form textarea {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 12px 20px;
+  border: none;
+  box-sizing: border-box;
+  background-color: rgb(226, 226, 226);
+}
+
+.send_button {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #eeeeee;
+  padding: 1.2rem 5rem;
+  background-color: #101010;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 white;
+  transition: all 0.4s;
+  border: none;
+  margin-right: 10px;
+}
