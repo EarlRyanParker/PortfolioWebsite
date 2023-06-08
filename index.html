@@ -35,19 +35,20 @@
     <div class="modal hidden">
       <button class="close-modal">&times;</button>
       <div class="left-container">
-        <form class="contactme-form" action="">
-          <div class="form-title"><h3>Let's Get In Touch!</h3></div>
+        <form class="contactme-form" action="https://formbold.com/s/9Xxz5"
+        method="POST">
+          <div ><h3 class="form-title">Let's Get In Touch!</h3></div>
           <div class="form-item">
-            <input type="text" id="fromname" placeholder="Name.." />
+            <input type="text" placeholder="Name.." />
           </div>
 
           <div class="form-item">
-            <input type="email" id="email" placeholder="Email.." />
+            <input type="email" name="email" placeholder="Email.." />
           </div>
 
           <div class="form-item">
             <textarea
-              id="message"
+              name="message"
               cols="50"
               rows="10"
               placeholder="Message.."
@@ -55,7 +56,7 @@
           </div>
 
           <div class="form-item">
-            <button type="button" class="send_button">Send !</button>
+            <button type="submit" class="send_button">Send!</button>
           </div>
         </form>
       </div>

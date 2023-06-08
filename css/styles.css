@@ -30,6 +30,10 @@ h2 {
   color: #ffffff;
 }
 
+h3 {
+  font-family: "Merriweather", sans-serif;
+}
+
 p {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -49,15 +53,11 @@ a {
   padding-left: 2rem;
 }
 
-.hidden {
-  display: none;
-}
-
 /*----------- NAVIGATION BAR -----------*/
 .nav_container {
   display: flex;
   flex-direction: row;
-  margin: 5rem 5rem 2rem 5rem;
+  margin: 3rem 5rem 2rem 5rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -119,13 +119,24 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 50%;
   background-color: white;
   box-shadow: 0 0 1rem white;
   z-index: 10;
-  height: 50rem;
+  height: 55rem;
   display: flex;
   justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.5px);
+  z-index: 5;
 }
 .contactme-form {
   padding: 4rem;
@@ -137,12 +148,8 @@ a {
   width: 100%;
 }
 
-.form-title {
-  margin-bottom: 1rem;
-}
-
 .right-container {
-  background: url(../images/flower.jpg) no-repeat center;
+  background: url(../flower.jpg) no-repeat center;
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -157,7 +164,7 @@ a {
   top: 0.7rem;
   right: 1.7rem;
   font-size: 5rem;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
   border: none;
   background: none;
@@ -167,9 +174,14 @@ a {
   display: none;
 }
 
+.form-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
 .contactme-form input[type="text"] {
   width: 100%;
   padding: 12px 20px;
+  font-size: 1.6rem;
   border: none;
   box-sizing: border-box;
   background-color: rgb(226, 226, 226);
@@ -178,6 +190,7 @@ a {
 .contactme-form input[type="email"] {
   width: 100%;
   padding: 12px 20px;
+  font-size: 1.6rem;
 
   box-sizing: border-box;
   border: none;
@@ -188,9 +201,11 @@ a {
   max-width: 100%;
   max-height: 100%;
   padding: 12px 20px;
+  font-size: 1.6rem;
   border: none;
   box-sizing: border-box;
   background-color: rgb(226, 226, 226);
+  resize: none;
 }
 
 .send_button {
@@ -204,4 +219,5 @@ a {
   transition: all 0.4s;
   border: none;
   margin-right: 10px;
+  cursor: pointer;
 }
