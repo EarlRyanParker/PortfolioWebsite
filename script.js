@@ -1,41 +1,4 @@
 "use strict";
-
-/*--------------- Modal Window -----------------*/
-
-const modal = document.querySelector(".modal");
-const contactMeButton = document.querySelector(".contact_me_button");
-const overlay = document.querySelector(".overlay");
-const closeModalButtton = document.querySelector(".close-modal");
-const submitButton = document.querySelector(".send-button");
-
-function openModal() {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-}
-
-function closeModal() {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-}
-
-contactMeButton.addEventListener("click", function () {
-  openModal();
-});
-
-closeModalButtton.addEventListener("click", function () {
-  closeModal();
-});
-
-overlay.addEventListener("click", function () {
-  closeModal();
-});
-
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
-
 /*--------------- Navigation Bar Mouse over and Mouse Out Animations -----------------*/
 
 const nav = document.querySelector(".nav");
@@ -89,6 +52,9 @@ function highlightLink(event) {
       const dividerRight = linkSelected.nextElementSibling;
       dividerLeft.style.opacity = 1;
       dividerRight.style.opacity = 1;
+      dividerLeft.style.color = "#8FCB9B";
+      dividerRight.style.color = "#8FCB9B";
+      linkSelected.style.color = "#8FCB9B";
     } else {
       link.style.opacity = 0.5;
     }
@@ -101,8 +67,6 @@ function handleMouseOver(event) {
 }
 
 function handleMouseOut(event) {
-  console.log(event.target);
-
   //if the mouseout target is a button or a link refresh all opacities of all elements in the navigation bar
   if (
     event.target.classList.contains("nav_link") ||
@@ -117,8 +81,14 @@ function handleMouseOut(event) {
     const buttons = elementSelected.closest(".nav").querySelectorAll("button");
 
     //Refresh all elements in navigation bars opacity to 1
-    links.forEach((link) => (link.style.opacity = 1));
-    dividers.forEach((divider) => (divider.style.opacity = 1));
+    links.forEach((link) => {
+      link.style.opacity = 1;
+      link.style.color = "#ffffff";
+    });
+    dividers.forEach((divider) => {
+      divider.style.opacity = 1;
+      divider.style.color = "#ffffff";
+    });
     buttons.forEach((button) => (button.style.opacity = 1));
   }
 }
@@ -129,4 +99,68 @@ nav.addEventListener("mouseover", function (event) {
 
 nav.addEventListener("mouseout", function (event) {
   handleMouseOut(event);
+});
+
+/*--------------- Media Toolbar -----------------*/
+const media = document.querySelector(".media_container");
+
+media.addEventListener("mouseover", function (event) {
+  if (event.target.classList.contains("media_icon")) {
+    const selectedIcon = event.target;
+    const mediaIcons = event.target
+      .closest(".media_container")
+      .querySelectorAll(".media_icon");
+
+    mediaIcons.forEach(function (mediaIcon) {
+      if (selectedIcon !== mediaIcon) {
+        mediaIcon.style.opacity = 0.5;
+      }
+    });
+  }
+});
+
+media.addEventListener("mouseout", function (event) {
+  if (event.target.classList.contains("media_icon")) {
+    const mediaIcons = event.target
+      .closest(".media_container")
+      .querySelectorAll(".media_icon");
+
+    mediaIcons.forEach((mediaIcon) => (mediaIcon.style.opacity = 1));
+  }
+});
+
+/*--------------- Modal Window -----------------*/
+
+const modal = document.querySelector(".modal");
+const contactMeButton = document.querySelector(".contact_me_button");
+const overlay = document.querySelector(".overlay");
+const closeModalButtton = document.querySelector(".close-modal");
+const submitButton = document.querySelector(".send-button");
+
+function openModal() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
+contactMeButton.addEventListener("click", function () {
+  openModal();
+});
+
+closeModalButtton.addEventListener("click", function () {
+  closeModal();
+});
+
+overlay.addEventListener("click", function () {
+  closeModal();
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
 });
