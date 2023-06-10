@@ -19,7 +19,7 @@ body {
 h1 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 6.7rem;
+  font-size: 6rem;
   color: #ffffff;
 }
 
@@ -45,6 +45,10 @@ p {
 a {
   color: #ffffff;
   font-size: 1.8rem;
+}
+
+span {
+  color: #8fcb9b;
 }
 /*----------- Reusable CSS -----------*/
 section {
@@ -73,12 +77,12 @@ section {
   text-decoration: none;
   font-size: 1.8rem;
   font-family: "Lato", sans-serif;
-  transition: opacity 0.3s linear 0.2s;
+  transition: all 0.3s linear 0.2s;
 }
 
 .link_divider {
   margin: 0 1rem 0 1rem;
-  transition: opacity 0.1s linear 0.2s;
+  transition: all 0.3s linear 0.2s;
 }
 
 .nav_buttons button {
@@ -97,11 +101,23 @@ section {
   height: 5.2rem;
 }
 
+.contact_me_button:hover {
+  background-color: #8fcb9b;
+  transition: background-color 0.3s linear 0.2s;
+}
+
+.resume_button:hover {
+  border-color: #8fcb9b;
+  color: #8fcb9b;
+  outline: #8fcb9b solid 0.2rem;
+  transition: all 0.3s linear 0.2s;
+}
+
 .resume_button {
   background-color: transparent;
   color: #ffffff;
   border-color: #ffffff;
-  outline: #ffffff solid 0.1rem;
+  outline: #ffffff solid 0.2rem;
   width: 18rem;
   height: 4.8rem;
 }
@@ -110,26 +126,92 @@ section {
   cursor: pointer;
 }
 
-/*----------- About Me SECTION -----------*/
+/*----------- Hero SECTION -----------*/
 
-.intro_container {
-  display: flex;
-  align-items: center;
-  margin-top: 23vh;
+.hero_text_container {
+  margin-top: 25vh;
+  max-width: 1120rem;
+}
+.hero_title {
+  line-height: 7rem;
 }
 
-.intro_text_container {
-  margin-top: -5vh;
-  width: 70%;
+.hero_paragraph {
+  margin-top: 1.5rem;
+  width: 60rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  opacity: 0.95;
 }
 
-.intro_text_container h1 {
-  font-size: 5rem;
+.project_button {
+  margin-top: 1.7rem;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+  color: #101010;
+  padding: 1.7rem 5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 #8fcb9b;
+  border: none;
+  cursor: pointer;
+  font-family: "lato";
+}
+.project_button:hover {
+  box-shadow: 0 0 25px 0 #8fcb9b;
+  transition: all 0.3s linear 0.1s;
 }
 
-.intro_img_container img {
-  width: 100%;
+/*----------- Scroll Indicator ----------*/
+.scroll_container {
+  position: fixed;
+  bottom: -1;
+  height: 30vh;
+  right: 15rem;
+  width: 4rem;
+  border: 1px solid #8fcb9b;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
 }
+.scroll_indicator {
+  margin-top: 0.2rem;
+  animation-duration: 2s;
+  animation-name: changeMarginLoop;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+.scroll_text {
+  writing-mode: vertical-rl;
+  font-family: "Lato";
+  color: #8fcb9b;
+  text-orientation: mixed;
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+}
+
+/*----------- Media Container ----------*/
+.media_container {
+  position: fixed;
+  bottom: -1;
+  height: 30vh;
+  left: 15rem;
+  width: 4rem;
+  border: 1px solid #8fcb9b;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.media_icon {
+  margin-top: 2rem;
+  animation-duration: 1s;
+  animation-name: changeOpacityLoop;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  transition: opacity 0.3s linear 0.1s;
+}
+
 /*----------- Contact Me Modal Window  -----------*/
 
 .contactme-container {
@@ -225,7 +307,6 @@ section {
 
 .contactme-form textarea {
   width: 100%;
-
   padding: 12px 20px;
   font-size: 1.6rem;
   border: none;
@@ -245,4 +326,27 @@ section {
   border: none;
   margin-right: 10px;
   cursor: pointer;
+}
+
+/*----------- Animations  -----------*/
+@keyframes changeMarginLoop {
+  from {
+    opacity: 0;
+    margin-top: 0;
+  }
+
+  to {
+    opacity: 100;
+    margin-top: 24vh;
+  }
+}
+
+@keyframes changeOpacityLoop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
 }
