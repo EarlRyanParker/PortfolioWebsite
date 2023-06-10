@@ -32,6 +32,7 @@ h2 {
 
 h3 {
   font-family: "Merriweather", sans-serif;
+  color: #ffffff;
 }
 
 p {
@@ -46,8 +47,8 @@ a {
   font-size: 1.8rem;
 }
 /*----------- Reusable CSS -----------*/
-.container {
-  max-width: 120rem;
+section {
+  max-width: 125rem;
   margin: 0 auto;
   padding-right: 2rem;
   padding-left: 2rem;
@@ -105,8 +106,30 @@ a {
   height: 4.8rem;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 /*----------- About Me SECTION -----------*/
 
+.intro_container {
+  display: flex;
+  align-items: center;
+  margin-top: 23vh;
+}
+
+.intro_text_container {
+  margin-top: -5vh;
+  width: 70%;
+}
+
+.intro_text_container h1 {
+  font-size: 5rem;
+}
+
+.intro_img_container img {
+  width: 100%;
+}
 /*----------- Contact Me Modal Window  -----------*/
 
 .contactme-container {
