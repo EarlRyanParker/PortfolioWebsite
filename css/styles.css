@@ -140,7 +140,7 @@ section {
   margin-top: 1.5rem;
   width: 60rem;
   font-size: 2rem;
-  line-height: 2.6rem;
+  line-height: 2.9rem;
   opacity: 0.95;
 }
 
@@ -229,7 +229,7 @@ section {
   transform: translate(-50%, -50%);
   width: 50%;
   background-color: white;
-  box-shadow: 0 0 1rem white;
+  box-shadow: 0 0 1rem #8fcb9b;
   z-index: 10;
   height: 55rem;
   display: flex;
@@ -248,12 +248,17 @@ section {
 }
 .contactme-form {
   padding: 4rem;
+  height: 100%;
 }
 
 .left-container {
   background-color: white;
   height: 100%;
   width: 100%;
+}
+
+.form-title {
+  color: #101010;
 }
 
 .right-container {
@@ -312,7 +317,6 @@ section {
   border: none;
   box-sizing: border-box;
   background-color: rgb(226, 226, 226);
-  resize: none;
 }
 
 .send-button {
