@@ -54,7 +54,7 @@ a {
 }
 
 /*----------- NAVIGATION BAR -----------*/
-.nav_container {
+.nav {
   display: flex;
   flex-direction: row;
   margin: 3rem 5rem 2rem 5rem;
@@ -72,10 +72,12 @@ a {
   text-decoration: none;
   font-size: 1.8rem;
   font-family: "Lato", sans-serif;
+  transition: opacity 0.3s linear 0.2s;
 }
 
 .link_divider {
   margin: 0 1rem 0 1rem;
+  transition: opacity 0.1s linear 0.2s;
 }
 
 .nav_buttons button {
@@ -85,6 +87,7 @@ a {
   font-size: 1.9rem;
 
   margin-left: 1.6rem;
+  transition: opacity 0.3s linear 0.2s;
 }
 
 .contact_me_button {
@@ -198,8 +201,8 @@ a {
 }
 
 .contactme-form textarea {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+
   padding: 12px 20px;
   font-size: 1.6rem;
   border: none;
@@ -208,7 +211,7 @@ a {
   resize: none;
 }
 
-.send_button {
+.send-button {
   text-decoration: none;
   font-size: 1.8rem;
   color: #eeeeee;
@@ -216,7 +219,6 @@ a {
   background-color: #101010;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 white;
-  transition: all 0.4s;
   border: none;
   margin-right: 10px;
   cursor: pointer;
