@@ -1,8 +1,32 @@
 "use strict";
-const nav = document.querySelector(".nav");
-/*--------------- Navigation Bar Sticky Animation -----------------*/
+/*--------------- Page Naviation Smooth Scrolling  -----------------*/
+
+//Link page navigation
+document
+  .querySelector(".nav_links")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    // Matching strategy
+    if (event.target.classList.contains("nav_link")) {
+      const id = event.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+//button page navigation
+const projectSection = document.querySelector(
+  ".embedded_software_engineering_section"
+);
+const projectButton = document.querySelector(".project_button");
+
+projectButton.addEventListener("click", function () {
+  projectSection.scrollIntoView({ behavior: "smooth" });
+});
+
+//Reveal Sections
 
 /*--------------- Navigation Bar Mouse over and Mouse Out Animations -----------------*/
+const nav = document.querySelector(".nav");
 
 function highlightButton(event) {
   //Function highlights the user mouseovered button in the navigation bar in the header of the page by dimining the opacity of all its sibling elements
@@ -100,6 +124,33 @@ nav.addEventListener("mouseover", function (event) {
 
 nav.addEventListener("mouseout", function (event) {
   handleMouseOut(event);
+});
+/*--------------- About me Tabbed Component  -----------------*/
+const aboutmeIconsContainer = document.querySelector(
+  ".aboutme_icons_container"
+);
+const tabContents = document.querySelectorAll(".aboutme_description");
+const icons = document.querySelectorAll(".aboutme_icon");
+
+aboutmeIconsContainer.addEventListener("click", function (event) {
+  const iconSelected = event.target.closest(".aboutme_icon");
+
+  //guard clause if aboutme_icon is not selected return
+  if (!iconSelected) return;
+
+  //return each element to inactive width
+  icons.forEach((icon) => icon.classList.remove("aboutme_icon--active"));
+
+  //Add hidden class to all aboutme description paragraphs
+  tabContents.forEach((tabContent) => tabContent.classList.add("hidden"));
+
+  //set selected icon to active width
+  iconSelected.classList.add("aboutme_icon--active");
+
+  //Remove hidden class of aboutme_content coresponding to the icon selected revealing the content.
+  document
+    .querySelector(`.aboutme_content--${iconSelected.dataset.tab}`)
+    .classList.remove("hidden");
 });
 
 /*--------------- Media Toolbar -----------------*/

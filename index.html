@@ -18,7 +18,7 @@
       <nav class="nav">
         <div class="nav_links">
           <p class="link_divider">|</p>
-          <a class="nav_link" href="#About_me">Home</a>
+          <a class="nav_link" href="#Home">Home</a>
          
           <p class="link_divider">|</p>
           <a class="nav_link" href="#About_me">About Me</a>
@@ -38,14 +38,14 @@
       </nav>
     </header>
 
-    <section class="hero_section" id = "1">
+    <section class="hero_section" id = "Home">
       <div class = "hero_container">
       <div class= "hero_text_container">
         <h1 class = "hero_title">Hello! My name is Earl Ryan Parker,</h1>
         <h1 class = "hero_title"><span>Embedded Software Engineer</span> and </h1>
         <h1 class = "hero_title"><span>Web Developer</span></h1>
         <p class = "hero_paragraph">Whether it's developing firmware for embedded systems or crafting dynamic websites, I am driven by a passion for pushing boundaries, delivering high-quality solutions, and exceeding expectations. Join me on this exhilarating journey as we harness the power of software engineering to shape the future.</p>
-        <button class="project_button"> Click Here to See What I've Coded!</button>
+        <button class="project_button" href="#Embedded_software_engineering"> Click Here to See What I've Coded!</button>
       </div>
       <div class="hero_img_container"><img src="robotBoy.PNG"></div>
       </div>
@@ -63,12 +63,24 @@
       <a href="https://www.instagram.com/ryannparkerr/"> <img class = "media_icon" src = "icons/InstagramIcon.svg"></a>
     </div>
 
-    <section class="aboutme_section" id = "2">
+    <section class="aboutme_section" id = "About_me">
       <div class="aboutme_container">
-      
+
         <div class = "aboutme_text_container">
         <h2 class="aboutme_title">About Me</h2>
-        <p class="aboutme_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus. Erat pellentesque adipiscing commodo elit. Senectus et netus et malesuada. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Scelerisque viverra mauris in aliquam sem. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Et tortor at risus viverra adipiscing at in tellus integer. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Id ornare arcu odio ut sem nulla. Mauris pharetra et ultrices neque ornare aenean. Sem integer vitae justo eget magna fermentum iaculis. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Quis risus sed vulputate odio ut enim blandit volutpat maecenas. Eget velit aliquet sagittis id consectetur purus.</p>
+        <div class="aboutme_icons_container">
+        
+        <img class="aboutme_icon aboutme_icon--active" data-tab = "1" src="icons/ProgrammingIcon.svg">
+        <img class="aboutme_icon"  data-tab = "2" src="icons/ElectricalEngineeringIcon.svg">
+        <img class="aboutme_icon"  data-tab = "3" src="icons/HobbiesIcon.svg">
+        </div>
+
+        <p class="aboutme_description aboutme_content--1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus. Erat pellentesque adipiscing commodo elit. Senectus et netus et malesuada. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Scelerisque viverra mauris in aliquam sem. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Et tortor at risus viverra adipiscing at in tellus integer. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Id ornare arcu odio ut sem nulla. Mauris pharetra et ultrices neque ornare aenean. Sem integer vitae justo eget magna fermentum iaculis. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Quis risus sed vulputate odio ut enim blandit volutpat maecenas. Eget velit aliquet sagittis id consectetur purus.</p>
+
+        <p class="aboutme_description aboutme_content--2 hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus. Erat pellentesque adipiscing commodo elit. Senectus et netus et malesuada. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. </p>
+
+        <p class="aboutme_description aboutme_content--3 hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus. Erat pellentesque adipiscing commodo elit. Senectus et netus et malesuada. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Scelerisque viverra mauris in aliquam sem. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Et tortor at risus viverra adipiscing at in tellus integer. Nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices. Id ornare arcu odio ut sem nulla. Mauris pharetra et ultrices neque ornare aenean. Sem integer vitae justo eget magna fermentum iaculis. </p>
+
         <h3 class="skills_title">Skills</h3>
         <div class="skills_container">
         <ul class="skill_list">
@@ -104,9 +116,8 @@
   </div>
     </section>
 
-    <section class="embedded_software_engineering_section">
+    <section class="embedded_software_engineering_section" id="Embedded_software_engineering">
       <h2 class="project_section_title">Embedded Software Engineering Projects</h2>
-      
       <div class="project_container ">
         <div class="project_text_container">
           <h1 class="project_number">01.</h1>
@@ -185,7 +196,90 @@
       </div>
     </section>
 
-    
+    <section class="web_development_section" id ="Web_Development">
+      <h2 class="project_section_title">Web Development Projects</h2>
+      
+      <div class="project_container ">
+        <div class="project_text_container">
+          <h1 class="project_number">01.</h1>
+          <h2 class="project_title">Productivty Web App</h1>
+          <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tellus quis arcu hendrerit rutrum. Sed eget eros nec nulla luctus iaculis. Donec vitae porta ex. Vestibulum at quam turpis. Curabitur est urna, fringilla at lorem id, sollicitudin feugiat ligula. Proin id augue congue, sollicitudin lorem in, fringilla nisi. Donec non ultrices orci. Donec in cursus ipsum. Integer vestibulum sem quam, eget rhoncus quam consequat vel. Suspendisse elementum efficitur nisi, et mattis turpis scelerisque eu. Etiam non dui porttitor, pellentesque diam at, convallis nibh. Morbi aliquam mollis elit eu ultricies. Mauris vel nulla et lectus auctor euismod nec at nisl.
+          </p>
+          
+          <div class="project_link_container">
+            <a class="project_link">Learn more</a>
+            <a class="project_link">Github Repo</a>
+          </div>
+          
+          <h3 class="skills_title">Skills Applied</h3>
+          <ul class="skill_list">
+            <li class="skill_item">• Microcontrollers (ARM, STM32, Arduino)</li>
+            <li class="skill_item">• Communication Protocols</li>
+            <li class="skill_item">• Interrupt-driven design</li>
+            <li class="skill_item">• Hardware test equipment: oscilloscope, logic analyzer</li>
+          </ul>
+        </div>
+
+        <div class="project_slider_container">
+          <div class="slider_component"></div>
+        </div>
+      </div>
+      <div class="project_container row_reverse">
+        <div class="project_text_container_reverse">
+          <h1 class="project_number">02.</h1>
+          <h2 class="project_title">Forkify App</h1>
+          <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tellus quis arcu hendrerit rutrum. Sed eget eros nec nulla luctus iaculis. Donec vitae porta ex. Vestibulum at quam turpis. Curabitur est urna, fringilla at lorem id, sollicitudin feugiat ligula. Proin id augue congue, sollicitudin lorem in, fringilla nisi. Donec non ultrices orci. Donec in cursus ipsum. Integer vestibulum sem quam, eget rhoncus quam consequat vel. Suspendisse elementum efficitur nisi, et mattis turpis scelerisque eu. Etiam non dui porttitor, pellentesque diam at, convallis nibh. Morbi aliquam mollis elit eu ultricies. Mauris vel nulla et lectus auctor euismod nec at nisl.
+          </p>
+          
+          <div class="project_link_container">
+            <a class="project_link">Learn more</a>
+            <a class="project_link">Github Repo</a>
+          </div>
+          
+          <h3 class="skills_title">Skills Applied</h3>
+          <ul class="skill_list">
+            <li class="skill_item">• Microcontrollers (ARM, STM32, Arduino)</li>
+            <li class="skill_item">• Communication Protocols</li>
+            <li class="skill_item">• Interrupt-driven design</li>
+            <li class="skill_item">• Hardware test equipment: oscilloscope, logic analyzer</li>
+          </ul>
+        </div>
+
+        <div class="project_slider_container">
+          <div class="slider_component"></div>
+        </div>
+      </div>
+
+      <div class="project_container ">
+        <div class="project_text_container">
+          <h1 class="project_number">03.</h1>
+          <h2 class="project_title">Portfolio Website</h1>
+          <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tellus quis arcu hendrerit rutrum. Sed eget eros nec nulla luctus iaculis. Donec vitae porta ex. Vestibulum at quam turpis. Curabitur est urna, fringilla at lorem id, sollicitudin feugiat ligula. Proin id augue congue, sollicitudin lorem in, fringilla nisi. Donec non ultrices orci. Donec in cursus ipsum. Integer vestibulum sem quam, eget rhoncus quam consequat vel. Suspendisse elementum efficitur nisi, et mattis turpis scelerisque eu. Etiam non dui porttitor, pellentesque diam at, convallis nibh. Morbi aliquam mollis elit eu ultricies. Mauris vel nulla et lectus auctor euismod nec at nisl.
+          </p>
+          
+          <div class="project_link_container">
+            <a class="project_link">Learn more</a>
+            <a class="project_link">Github Repo</a>
+          </div>
+          
+          <h3 class="skills_title">Skills Applied</h3>
+          <ul class="skill_list">
+            <li class="skill_item">• Microcontrollers (ARM, STM32, Arduino)</li>
+            <li class="skill_item">• Communication Protocols</li>
+            <li class="skill_item">• Interrupt-driven design</li>
+            <li class="skill_item">• Hardware test equipment: oscilloscope, logic analyzer</li>
+          </ul>
+        </div>
+
+        <div class="project_slider_container">
+          <div class="slider_component"></div>
+        </div>
+      </div>
+      
+      
+
+
+    </section>
 
 
 
