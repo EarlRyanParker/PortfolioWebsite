@@ -56,11 +56,22 @@ section {
   margin: 0 auto;
   padding-right: 2rem;
   padding-left: 2rem;
+  margin-bottom: 30vh;
 }
 
 /*----------- NAVIGATION BAR -----------*/
+.header {
+  display: flex;
+  background-color: rgb(19, 19, 19);
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .nav {
   display: flex;
+
   flex-direction: row;
   margin: 3rem 5rem 2rem 5rem;
   align-items: center;
@@ -128,18 +139,23 @@ section {
 
 /*----------- Hero SECTION -----------*/
 
+.hero_container {
+  display: flex;
+  margin-top: 20vh;
+}
 .hero_text_container {
-  margin-top: 25vh;
   max-width: 1120rem;
+  margin-top: 6.1rem;
 }
 .hero_title {
-  line-height: 7rem;
+  line-height: 4.1rem;
+  font-size: 3.7rem;
 }
 
 .hero_paragraph {
   margin-top: 1.5rem;
   width: 60rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.9rem;
   opacity: 0.95;
 }
@@ -150,7 +166,7 @@ section {
   font-size: 2em;
   font-weight: bold;
   color: #101010;
-  padding: 1.7rem 5rem;
+  padding: 1.7rem 4rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 0 10px 0 #8fcb9b;
@@ -163,19 +179,145 @@ section {
   transition: all 0.3s linear 0.1s;
 }
 
+.hero_img_container img {
+  max-width: 66rem;
+}
+/*----------- Aboutme Section ----------*/
+
+.aboutme_container {
+  display: flex;
+}
+.aboutme_text_container {
+  max-width: 75rem;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  padding: 2rem;
+  border-left: #8fcb9b solid 0.5rem;
+}
+
+.aboutme_title {
+  font-size: 3rem;
+}
+
+.aboutme_desciption {
+  font-size: 1.8rem;
+}
+
+.skills_container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.skills_title {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.skill_list {
+  list-style-type: circle;
+}
+
+.list_title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.skill_item {
+  font-size: 2rem;
+  color: #8fcb9b;
+}
+
+.aboutme_img {
+  width: 100%;
+  background-color: #8fcb9b;
+  border-right: #8fcb9b solid 0.5rem;
+
+  height: 50rem;
+}
+
+/*----------- Embedded Software Engineering & Web Development Section CSS----------*/
+
+.project_number {
+  margin-top: -1rem;
+}
+.project_section_title {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  border-bottom: #8fcb9b solid 0.5rem;
+  border-left: #8fcb9b solid 0.5rem;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.project_container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 10rem;
+}
+
+.project_text_container_reverse {
+  max-width: 50rem;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+  border-right: #8fcb9b solid;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.project_text_container {
+  max-width: 50rem;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+  border-left: #8fcb9b solid;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.row_reverse {
+  flex-direction: row-reverse;
+}
+
+.project_title {
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project_description {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.project_link {
+  color: #8fcb9b;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.project_link:hover {
+  text-decoration: underline;
+}
+
+.slider_component {
+  background-color: #8fcb9b;
+  width: 70rem;
+  height: 52rem;
+}
+
 /*----------- Scroll Indicator ----------*/
 .scroll_container {
   position: fixed;
-  bottom: -1;
-  height: 30vh;
+  bottom: 0;
+  height: 25vh;
   right: 15rem;
   width: 4rem;
-  border: 1px solid #8fcb9b;
+  border-top: 1px solid #8fcb9b;
+  border-left: 1px solid #8fcb9b;
+  border-right: 1px solid #8fcb9b;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
 }
 .scroll_indicator {
-  margin-top: 0.2rem;
   animation-duration: 2s;
   animation-name: changeMarginLoop;
   animation-iteration-count: infinite;
@@ -194,11 +336,13 @@ section {
 /*----------- Media Container ----------*/
 .media_container {
   position: fixed;
-  bottom: -1;
-  height: 30vh;
+  bottom: 0;
+  height: 25vh;
   left: 15rem;
   width: 4rem;
-  border: 1px solid #8fcb9b;
+  border-top: 1px solid #8fcb9b;
+  border-left: 1px solid #8fcb9b;
+  border-right: 1px solid #8fcb9b;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
 }
@@ -341,7 +485,7 @@ section {
 
   to {
     opacity: 100;
-    margin-top: 24vh;
+    margin-top: 25vh;
   }
 }
 
@@ -352,5 +496,15 @@ section {
 
   to {
     opacity: 100;
+  }
+}
+
+@keyframes changeWidthLoop {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }

@@ -1,7 +1,8 @@
 "use strict";
-/*--------------- Navigation Bar Mouse over and Mouse Out Animations -----------------*/
-
 const nav = document.querySelector(".nav");
+/*--------------- Navigation Bar Sticky Animation -----------------*/
+
+/*--------------- Navigation Bar Mouse over and Mouse Out Animations -----------------*/
 
 function highlightButton(event) {
   //Function highlights the user mouseovered button in the navigation bar in the header of the page by dimining the opacity of all its sibling elements
@@ -164,3 +165,24 @@ document.addEventListener("keydown", function (event) {
     closeModal();
   }
 });
+
+/*--------------- Scroll Indicator -----------------*/
+
+const scrollIndicator = document.querySelector(".scroll_container");
+const aboutMeSection = document.querySelector(".aboutme_section");
+
+//Callback function hidescrollindicator is triggered when the viewport is scrolled to the about me section. The function hides the scroll indicator. Then stops observer for this intersection.
+const hideScrollIndicator = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  scrollIndicator.classList.add("hidden");
+  observer.unobserve(entry.target);
+};
+
+//Creates about me section observer
+let aboutMeSectionObserver = new IntersectionObserver(hideScrollIndicator, {
+  root: null,
+  threshold: 1,
+});
+
+aboutMeSectionObserver.observe(aboutMeSection);
