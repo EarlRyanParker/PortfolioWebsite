@@ -50,6 +50,12 @@ a {
 span {
   color: #8fcb9b;
 }
+
+footer {
+  text-align: center;
+  padding: 7rem;
+  background-color: rgb(255, 255, 255);
+}
 /*----------- Reusable CSS -----------*/
 section {
   max-width: 125rem;
@@ -352,7 +358,7 @@ section {
 }
 .scroll_indicator {
   animation-duration: 2s;
-  animation-name: changeMarginLoop;
+  animation-name: changeMargin;
   animation-iteration-count: infinite;
   animation-direction: normal;
 }
@@ -383,7 +389,7 @@ section {
 .media_icon {
   margin-top: 2rem;
   animation-duration: 1s;
-  animation-name: changeOpacityLoop;
+  animation-name: changeOpacity;
   animation-iteration-count: 3;
   animation-direction: alternate;
   transition: opacity 0.3s linear 0.1s;
@@ -510,7 +516,7 @@ section {
 }
 
 /*----------- Animations  -----------*/
-@keyframes changeMarginLoop {
+@keyframes changeMargin {
   from {
     opacity: 0;
     margin-top: 0;
@@ -522,7 +528,7 @@ section {
   }
 }
 
-@keyframes changeOpacityLoop {
+@keyframes changeOpacity {
   from {
     opacity: 0;
   }
@@ -532,12 +538,32 @@ section {
   }
 }
 
-@keyframes changeWidthLoop {
-  from {
-    width: 0;
+@keyframes fadeRight {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
   }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-  to {
-    width: 100%;
+@keyframes fadeLeft {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
   }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fadeLeftAnimate {
+  animation: fadeLeft 1s ease-in;
+}
+
+.fadeRightAnimate {
+  animation: fadeRight 1s ease-in;
 }

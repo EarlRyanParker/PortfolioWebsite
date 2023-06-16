@@ -71,6 +71,7 @@ function highlightLink(event) {
   buttons.forEach((button) => (button.style.opacity = 0.5));
 
   //if the current link in links is the linkSelected then set the opacity of the divder to its left and right to 1, if its not dim its opacity
+
   links.forEach((link) => {
     if (link === linkSelected) {
       const dividerLeft = linkSelected.previousElementSibling;
@@ -200,6 +201,9 @@ function closeModal() {
 }
 
 contactMeButton.addEventListener("click", function () {
+  document
+    .querySelector(".hero_section")
+    .scrollIntoView({ behavior: "smooth" });
   openModal();
 });
 
@@ -237,3 +241,33 @@ let aboutMeSectionObserver = new IntersectionObserver(hideScrollIndicator, {
 });
 
 aboutMeSectionObserver.observe(aboutMeSection);
+
+/*--------------- Reveal Elements -----------------*/
+
+const allProjectContainers = document.querySelectorAll(".project_container");
+console.log(allProjectContainers);
+
+function revealProjectContainer(entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  const targetContainer = entry.target;
+  console.log(targetContainer);
+
+  targetContainer.classList.contains("row_reverse")
+    ? targetContainer.classList.add("fadeRightAnimate")
+    : targetContainer.classList.add("fadeLeftAnimate");
+
+  targetContainer.style.opacity = 1;
+
+  observer.unobserve(entry.target);
+}
+
+const projectContainerObserver = new IntersectionObserver(
+  revealProjectContainer,
+  { root: null, threshold: 0.3 }
+);
+
+allProjectContainers.forEach(function (container) {
+  projectContainerObserver.observe(container);
+  container.style.opacity = 0;
+});
