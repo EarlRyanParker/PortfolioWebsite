@@ -23,8 +23,6 @@ projectButton.addEventListener("click", function () {
   projectSection.scrollIntoView({ behavior: "smooth" });
 });
 
-//Reveal Sections
-
 /*--------------- Navigation Bar Mouse over and Mouse Out Animations -----------------*/
 const nav = document.querySelector(".nav");
 
@@ -153,6 +151,27 @@ aboutmeIconsContainer.addEventListener("click", function (event) {
     .querySelector(`.aboutme_content--${iconSelected.dataset.tab}`)
     .classList.remove("hidden");
 });
+/*--------------- Reveal About me Section on Scroll -----------------*/
+const aboutmeContainer = document.querySelector(".aboutme_container");
+
+aboutmeContainer.style.opacity = 0;
+const revealAboutmeSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  //Guard clause
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.add("fadeUpAnimate");
+  entry.target.style.opacity = 1;
+  observer.unobserve(entry.target);
+};
+
+const aboutmeSectionObeserver = new IntersectionObserver(revealAboutmeSection, {
+  root: null,
+  threshold: 0.5,
+});
+
+aboutmeSectionObeserver.observe(aboutmeContainer);
 
 /*--------------- Media Toolbar -----------------*/
 const media = document.querySelector(".media_container");
@@ -242,17 +261,20 @@ let aboutMeSectionObserver = new IntersectionObserver(hideScrollIndicator, {
 
 aboutMeSectionObserver.observe(aboutMeSection);
 
-/*--------------- Reveal Elements -----------------*/
+/*--------------- Reveal Capstone Projects on Scroll -----------------*/
+const allProjectContainers = document.querySelectorAll(
+  ".capstone_project_container"
+);
 
-const allProjectContainers = document.querySelectorAll(".project_container");
-console.log(allProjectContainers);
-
-function revealProjectContainer(entries, observer) {
+function revealCapstoneProjectContainer(entries, observer) {
   const [entry] = entries;
+  //Guard clause
   if (!entry.isIntersecting) return;
-  const targetContainer = entry.target;
-  console.log(targetContainer);
 
+  //Select current project container
+  const targetContainer = entry.target;
+
+  //Determine which direction the project container with fade in from, by checking orientation of the container.
   targetContainer.classList.contains("row_reverse")
     ? targetContainer.classList.add("fadeRightAnimate")
     : targetContainer.classList.add("fadeLeftAnimate");
@@ -262,12 +284,43 @@ function revealProjectContainer(entries, observer) {
   observer.unobserve(entry.target);
 }
 
-const projectContainerObserver = new IntersectionObserver(
-  revealProjectContainer,
+const capstoneProjectContainerObserver = new IntersectionObserver(
+  revealCapstoneProjectContainer,
   { root: null, threshold: 0.3 }
 );
 
 allProjectContainers.forEach(function (container) {
-  projectContainerObserver.observe(container);
+  capstoneProjectContainerObserver.observe(container);
   container.style.opacity = 0;
 });
+
+/*--------------- Reveal Additional Projects on Scroll -----------------*/
+
+const allProjectTileContainer = document.querySelectorAll(
+  ".project_tile_container"
+);
+
+const revealProjectTiles = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  //Guard clause
+  if (!entry.isIntersecting) return;
+  entry.target.classList.add("fadeInAnimate");
+  entry.target.style.opacity = 1;
+  observer.unobserve(entry.target);
+};
+
+const projectTileContainerObserver = new IntersectionObserver(
+  revealProjectTiles,
+  {
+    root: null,
+    threshold: 0.5,
+  }
+);
+
+allProjectTileContainer.forEach(function (container) {
+  projectTileContainerObserver.observe(container);
+  container.style.opacity = 0;
+});
+
+/*--------------- Highlight On Hover Projects Tile on Scroll -----------------*/
